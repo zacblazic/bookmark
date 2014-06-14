@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="announcements"> 
+<head>
+  <title>Announcements</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  
+  <div ng-controller="AnnouncementsController as ac">
+    <ul>
+      <li ng-repeat="announcement in ac.announcements">
+        <span>{{ announcement.date | date}}</span>
+        <span>
+          <div>{{ announcement.title }}</div>
+          <div>{{ announcement.body }}</div>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
