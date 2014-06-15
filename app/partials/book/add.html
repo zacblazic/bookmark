@@ -1,0 +1,33 @@
+<div>
+  <div>
+    <img class="img-thumbnail" src="http://images.amazon.com/images/P/{{ AddBookCtrl.book.isbn }}.01.MZZZZZZZ" alt="{{ BookCtrl.book.title }}" />
+  </div>
+  <div>
+    <label class="control-label">Title:</label>
+    <span>{{ AddBookCtrl.book.title }}</span>
+  </div>
+  <div>
+    <label class="control-label">Author:</label>
+    <span>{{ AddBookCtrl.book.author }}</span>
+  </div>
+  <div>
+    <label class="control-label">ISBN:</label>
+    <span>{{ AddBookCtrl.book.isbn }}</span>
+  </div>
+</div>
+<div>
+  <div>
+    <label class="control-label">Title:</label>
+    <input type="text" class="form-control" ng-model="AddBookCtrl.book.title" />
+  </div>
+  <div>
+    <label class="control-label">Author:</label>
+    <input type="text" class="form-control" ng-model="AddBookCtrl.book.author" />
+  </div>
+  <div>
+    <label class="control-label">ISBN:</label>
+    <input type="text" class="form-control" ng-model="AddBookCtrl.book.isbn" />
+  </div>
+  <button class="btn btn-default" ng-click="AddBookCtrl.addBook()">Add</button>
+  <a class="btn btn-default" href="#books">Back</a>
+</div>

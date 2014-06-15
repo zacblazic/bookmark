@@ -43,7 +43,7 @@ exports.delete = function(req, res) {
   Category.findById(req.params.id, function(err, category) {
     if (err) return res.send(404);
 
-    category.delete(function(err) {
+    category.remove(function(err) {
       if (err) return req.send(400);
       res.send(200);
     });

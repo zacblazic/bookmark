@@ -1,0 +1,24 @@
+<a class="btn btn-default" href="#/books/add">Add Book</a>
+<div>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="book in BookListCtrl.books">
+      <div>
+        <img class="img-thumbnail" src="http://images.amazon.com/images/P/{{ book.isbn }}.01.ZZZZZZZ" alt="{{ book.title }}" />
+      </div>
+      <div>
+        <label class="control-label">Title:</label>
+        <span>{{ book.title }}</span>
+      </div>
+      <div>
+        <label class="control-label">Author:</label>
+        <span>{{ book.author }}</span>
+      </div>
+      <div>
+        <label class="control-label">ISBN:</label>
+        <span>{{ book.isbn }}</span>
+      </div>
+      <a class="btn btn-default" href="#book/{{ book._id }}/view">View Details</a>
+      <button type="button" class="btn btn-default" ng-click="BookListCtrl.deleteBook(book._id)">Delete</button>
+    </li>
+  </ul>
+</div>

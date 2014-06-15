@@ -43,7 +43,7 @@ exports.delete = function(req, res) {
   Genre.findById(req.params.id, function(err, genre) {
     if (err) return res.send(404);
 
-    genre.delete(function(err) {
+    genre.remove(function(err) {
       if (err) return req.send(400);
       res.send(200);
     });

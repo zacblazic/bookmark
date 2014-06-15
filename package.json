@@ -1,6 +1,6 @@
 {
   "name": "bookmark",
-  "description": "reading list application",
+  "description": "A reading list application",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -12,6 +12,8 @@
     "http-server": "^0.6.1",
     "bower": "^1.3.1"
   },
-
-  "start": "http-server -a localhost -p 4000"
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "http-server -a localhost -p 4000"
+  }
 }

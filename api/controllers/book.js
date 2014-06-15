@@ -30,7 +30,7 @@ exports.create = function(req, res) {
   });
 };
 
-exports.update = function() {
+exports.update = function(req, res) {
   Book.findById(req.params.id, function(err, book) {
     if (err) return res.send(404);
 
@@ -47,11 +47,11 @@ exports.update = function() {
   });
 };
 
-exports.delete = function() {
+exports.delete = function(req, res) {
   Book.findById(req.params.id, function(err, book) {
     if (err) return res.send(404);
 
-    book.remove(err, function(err) {
+    book.remove(function(err) {
       if (err) return res.send(400);
       res.send(200);
     });

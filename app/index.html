@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html ng-app="announcements"> 
+<html lang="en" ng-app="bookmark">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Announcements</title>
-  <link rel="stylesheet" href="css/app.css"/>
+  <!-- Bootstrap -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+  <link href="css/app.css" rel="stylesheet"/>
 </head>
-<body>
-  
-  <div ng-controller="AnnouncementsController as ac">
-    <ul>
-      <li ng-repeat="announcement in ac.announcements">
-        <span>{{ announcement.date | date}}</span>
-        <span>
-          <div>{{ announcement.title }}</div>
-          <div>{{ announcement.body }}</div>
-        </span>
-      </li>
-    </ul>
+<body role="document">
+  <div class="navbar navbar-inverse" role="navbar">
+    <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bookmark</a>
+      </div>
+      <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+    </div>
+  </div>
+  <div class="container theme-showcase" role="main">
+    <div ng-view class="slide"></div>
   </div>
 
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/directives.js"></script>
 </body>
 </html>
