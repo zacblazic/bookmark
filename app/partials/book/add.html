@@ -1,33 +1,36 @@
-<div>
+<div class="jumbotron">
   <div>
-    <img class="img-thumbnail" src="http://images.amazon.com/images/P/{{ AddBookCtrl.book.isbn }}.01.MZZZZZZZ" alt="{{ BookCtrl.book.title }}" />
+    <img class="img-thumbnail" src="http://images.amazon.com/images/P/{{ BookCtrl.book.isbn }}.01.MZZZZZZZ" alt="{{ BookCtrl.book.title }}" />
   </div>
   <div>
     <label class="control-label">Title:</label>
-    <span>{{ AddBookCtrl.book.title }}</span>
+    <span>{{ BookCtrl.book.title }}</span>
   </div>
   <div>
     <label class="control-label">Author:</label>
-    <span>{{ AddBookCtrl.book.author }}</span>
+    <span>{{ BookCtrl.book.author }}</span>
   </div>
   <div>
     <label class="control-label">ISBN:</label>
-    <span>{{ AddBookCtrl.book.isbn }}</span>
+    <span>{{ BookCtrl.book.isbn }}</span>
   </div>
 </div>
 <div>
-  <div>
-    <label class="control-label">Title:</label>
-    <input type="text" class="form-control" ng-model="AddBookCtrl.book.title" />
-  </div>
-  <div>
-    <label class="control-label">Author:</label>
-    <input type="text" class="form-control" ng-model="AddBookCtrl.book.author" />
-  </div>
-  <div>
-    <label class="control-label">ISBN:</label>
-    <input type="text" class="form-control" ng-model="AddBookCtrl.book.isbn" />
-  </div>
-  <button class="btn btn-default" ng-click="AddBookCtrl.addBook()">Add</button>
+  <form role="form">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" ng-model="BookCtrl.book.title" />
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="text" class="form-control" ng-model="BookCtrl.book.author" />
+    </div>
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input type="text" class="form-control" ng-model="BookCtrl.book.isbn">
+    </div>
+  </form>
+
+  <button class="btn btn-default" ng-click="BookCtrl.saveBook()">Save</button>
   <a class="btn btn-default" href="#books">Back</a>
 </div>

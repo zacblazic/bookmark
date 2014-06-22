@@ -1,24 +1,46 @@
-<a class="btn btn-default" href="#/books/add">Add Book</a>
 <div>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="book in BookListCtrl.books">
-      <div>
-        <img class="img-thumbnail" src="http://images.amazon.com/images/P/{{ book.isbn }}.01.ZZZZZZZ" alt="{{ book.title }}" />
-      </div>
-      <div>
-        <label class="control-label">Title:</label>
-        <span>{{ book.title }}</span>
-      </div>
-      <div>
-        <label class="control-label">Author:</label>
-        <span>{{ book.author }}</span>
-      </div>
-      <div>
-        <label class="control-label">ISBN:</label>
-        <span>{{ book.isbn }}</span>
-      </div>
-      <a class="btn btn-default" href="#book/{{ book._id }}/view">View Details</a>
-      <button type="button" class="btn btn-default" ng-click="BookListCtrl.deleteBook(book._id)">Delete</button>
-    </li>
-  </ul>
+  <table class="table">
+    <thead>
+      <th>Cover</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="book in BookListCtrl.books">
+        <td>
+          <img class="img-thumbnail" src="http://images.amazon.com/images/P/{{ book.isbn }}.01.ZZZZZZZ" alt="{{ book.title }}" />
+        </td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.isbn }}</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="#book/{{ book._id }}/view">
+                  <span class="glyphicon glyphicon-eye-open"></span> Details
+                </a>
+              </li>
+              <li>
+                <a href="#book/{{ book._id }}/edit">
+                  <span class="glyphicon glyphicon-pencil"></span> Edit
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="" ng-click="BookListCtrl.deleteBook(book._id)">
+                  <span class="glyphicon glyphicon-remove"></span> Remove
+                </a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
